@@ -21,7 +21,7 @@
   scroll-behavior: smooth;
 }
 
-#landing {
+#home {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
@@ -41,7 +41,7 @@
   background: none; */
 }
 
-#landing img {
+#home img {
   width: 35vw;
   /* position: absolute; */
   position: relative;
@@ -49,7 +49,7 @@
   /* right: 6vw; */
 }
 
-#landing div.left {
+#home div.left {
   width: 50%;
   position: relative;
   display: flex;
@@ -57,7 +57,7 @@
   align-items: flex-start;
 }
 
-#landing div.left button {
+#home div.left button {
   /* width: 220px; */
   height: 60px;
   padding: 0 60px;
@@ -70,7 +70,7 @@
   color: rgb(255, 255, 255);
 }
 
-#landing div.left a {
+#home div.left a {
   margin-top: 40px;
 }
 
@@ -361,9 +361,10 @@ header.float button {
 
 #menu_ctn {
   width: calc(100vw - 20px);
-  height: calc(100vh - 20px);
+  height: calc(60vh - 20px);
   padding: 5px;
   background-color: rgb(255, 255, 255);
+  /* backdrop-filter: blur(4px); */
   border-radius: 10px;
   /* transition-duration: 200ms; */
   transition: padding 0ms, transform 500ms;
@@ -498,12 +499,27 @@ main.blur {
   filter: blur(2px);
 }
 
-#menu #menu_ctn .background {
-  width: calc(40vw);
+#menu #menu_ctn .box {
+  width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.91);
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  padding: 60px 5px 0px 5px;
+}
+
+#menu #menu_ctn .background {
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  right: 100%;
-  top: 0;
+  right: -10px;
+  background-color: rgba(196, 196, 196, 0.4);
+  backdrop-filter: blur(4px);
+  top: -10px;
   display: none;
 }
 
@@ -561,10 +577,10 @@ main.blur {
     font-weight: normal;
     color: rgb(0, 0, 0);
   }
-  #landing div.left {
+  #home div.left {
     width: 100%;
   }
-  #landing img {
+  #home img {
     display: none;
   }
   .medical {
@@ -682,6 +698,9 @@ main.blur {
   .map {
     box-shadow: 0px 0px 5px 1px rgb(16, 178, 67, 0.4);
   }
+  #about {
+    margin-top: -2rem;
+  }
 }
 
 
@@ -717,7 +736,6 @@ main.blur {
     transform: translateX(0px);
   }
   #menu_ctn {
-    padding-top: 80px;
     transition-delay: 0ms !important;
   }
 
@@ -744,7 +762,7 @@ main.blur {
   #circle {
     display: none;
   }
-  #landing {
+  #home {
     padding: 0 20px;
   }
   #about .box .left {
@@ -773,7 +791,7 @@ main.blur {
 
 #chat {
   width: 45%;
-  max-width: 100% !important;
+  max-width: calc(100% + 20px) !important;
   min-width: 600px;
 }
 
@@ -784,7 +802,7 @@ main.blur {
   width: 100%;
   height: 350px;
   /* border: 1px solid rgb(41, 41, 59); */
-  background-color: rgb(50, 50, 72);
+  background-color: rgb(50, 50, 55);
   /* box-shadow: 0px 0px 14px 2px rgba(16, 178, 67, 0.5); */
   border-radius: 20px;
 }
@@ -801,7 +819,7 @@ main.blur {
   min-height: 50px;
   border-radius: 15px;
   padding: 0 15px;
-  background-color: rgb(85, 85, 97);
+  background-color: rgb(80, 80, 85);
   color: white;
   font-size: 1rem;
 }

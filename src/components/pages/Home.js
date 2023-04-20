@@ -1,9 +1,9 @@
 import React from "react"
 import people from '../../people.svg'
 
-export default function Landing(props) {
+export default function Home(props) {
     return(
-        <div id="landing">
+        <div id="home">
           <div id="circle"></div>
             <div className="left">
               <h1><strong>EcoMed: </strong>Projeto de coleta e conscientização de medicamentos vencidos</h1>

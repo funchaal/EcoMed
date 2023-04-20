@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Header from './components/Header.js'
-import Landing from './components/pages/Landing';
+import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Local from './components/pages/Local';
 import Chating from './components/pages/Chating';
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header/>
       <main>
-        <Landing/>
+        <Home/>
         <About/>
         <Local/>
         <Chating/>

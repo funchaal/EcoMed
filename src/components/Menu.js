@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { FaPhoneAlt, FaLocationArrow } from 'react-icons/fa'
+import { FaPhoneAlt, FaLocationArrow, FaHome } from 'react-icons/fa'
 import ShortUniqueId from 'short-unique-id'
+import logo from '../logo.svg'
 
 const unid = new ShortUniqueId({ lenght: 10 })
 
@@ -17,6 +18,11 @@ const Item = ({ title, link, Icon, setActive, setHover, setReference, reference,
 
 function Menu(props) {
     const DATA = [
+        {
+            title: "Home", 
+            link: "#local", 
+            Icon: FaHome
+        }, 
         {
             title: "Local", 
             link: "#local", 
@@ -86,9 +92,13 @@ function Menu(props) {
                 <div></div>
             </button>
             <div id="menu_ctn">
+            <div className="background" onClick={() => setMenu(false)}></div>
+            <div className="box">
                 <div id="switcher" reference={reference} style={{ transform: `translateY(${switcherTranslation}px)` }}></div>
                 <div id="switcher-fixed" style={{ transform: `translateY(${switcherFixedTranslation}px)` }}></div>
                 {DATA.map((item, index) => <Item title={item.title} link={item.link} Icon={item.Icon} index={index} setReference={setReference} reference={reference} setActive={setActive} setHover={setHover} cancel={cancel} setMenu={setMenu}/>)}
+                <img src={logo} style={{ position: "absolute", bottom: "20px", height: "40px" }}></img>
+            </div>
             </div>
         </div>
     )
