@@ -260,6 +260,11 @@ header .logo {
   height: 50%;
 }
 
+header .logoicon {
+  height: 40%;
+  display: none;
+}
+
 header .button-box {
   display: flex;
   flex-direction: row;
@@ -311,18 +316,26 @@ header.float {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-header.float button:first-child {
+header .button-box a {
+  padding: 13px 70px;
+}
+
+header.float .button-box a:first-child {
   background-color: rgb(16, 178, 67);
   color: white;
 }
 
-header.float button:last-child {
+header.float .button-box a:last-child {
   border: 1px solid black;
   color: black;
   font-weight: normal;
 }
 
 header.float .logo {
+  display: none;
+}
+
+header.float .logoicon {
   display: none;
 }
 
@@ -343,7 +356,7 @@ header.float button {
 }
 
 #menu[show="false"] #menu_ctn {
-  transform: translateX(-60px);
+  transform: translateX(10px) !important;
 }
 
 #menu_ctn {
@@ -365,7 +378,7 @@ header.float button {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 60px;
   text-decoration: none;
   margin: 5px 0;
   padding: 0 20px 0 15.25px;
@@ -397,7 +410,7 @@ header.float button {
   position: absolute;
   top: 0;
   left: 5px;
-  height: 50px;
+  height: 60px;
   width: calc(100% - 10px);
   background-color: rgb(16, 178, 67);
   border-radius: 10px;
@@ -426,7 +439,7 @@ header.float button {
   position: absolute;
   top: 0;
   left: 5px;
-  height: 50px;
+  height: 60px;
   width: calc(100% - 10px);
   background-color: rgba(113, 113, 113, 0.188);
   border-radius: 10px;
@@ -472,6 +485,10 @@ main.blur {
 }
 
 .logo.blur {
+  filter: blur(2px);
+}
+
+.logoicon.blur {
   filter: blur(2px);
 }
 
@@ -611,10 +628,27 @@ main.blur {
 
 @media (max-width: 500px) {
   header {
-    padding: 0 10px;
+    padding: 0 0 0 15px;
   }
   header .logo {
-    height: 40%;
+    display: none;
+  }
+  header .logoicon {
+    display: block;
+  }
+  header .button-box a {
+    width: calc(50vw - 10px);
+    margin: 0;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .button-box a:last-child {
+    margin-left: 2.5px;
+  }
+  header .button-box a:first-child {
+    margin-right: 2.5px;
   }
   #root::-webkit-scrollbar {
     width: 0px;

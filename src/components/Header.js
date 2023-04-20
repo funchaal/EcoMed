@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../logo.svg'
+import logoicon from '../logoicon.svg'
 import Menu from './Menu'
 
 let time
@@ -43,6 +44,7 @@ export default function Header() {
     return(
         <header className={header}>
             <img src={logo} className="logo"></img>
+            <img src={logoicon} className="logoicon"></img>
             <div className="button-box">
                 <a href="#local">Ver local</a>
                 <a href="#contact">Contato</a>
