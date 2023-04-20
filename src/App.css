@@ -802,11 +802,13 @@ main.blur {
 #chat > div {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 10px;
   width: 100%;
+  overflow: hidden;
   height: 350px;
   /* border: 1px solid rgb(41, 41, 59); */
-  background-color: rgb(50, 50, 60);
+  background-color: rgb(70, 70, 76);
   /* box-shadow: 0px 0px 14px 2px rgba(16, 178, 67, 0.5); */
   border-radius: 20px;
 }
@@ -818,12 +820,14 @@ main.blur {
 }
 
 #chat input {
-  width: 100%;
-  height: 50px;
-  min-height: 50px;
-  border-radius: 15px;
+  width: calc(100% + 20px);
+  height: 60px;
+  min-height: 60px;
+  /* border-radius: 15px; */
+  position: relative;
+  bottom: -10px;
   padding: 0 15px;
-  background-color: rgb(80, 80, 90);
+  background-color: rgb(100, 100, 105);
   color: white;
   font-size: 1rem;
 }
@@ -835,7 +839,7 @@ main.blur {
 #conversation {
   flex-grow: 1;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -860,22 +864,22 @@ main.blur {
   justify-content: center;
   align-items: center;
   max-width: 70%;
-  padding: 14px 20px;
+  padding: 12px 16px;
   min-height: fit-content;
   margin-bottom: 10px;
-  border-radius: 20px;
+  border-radius: 15px;
   /* min-width: 100px; */
   color: white;
 }
 
 #conversation .assistant {
   align-self: flex-start;
-  background-color: rgb(85, 85, 97);
+  background-color: rgb(95, 95, 100);
 }
 
 #conversation .user {
   align-self: flex-end;
-  background-color: rgb(0, 169, 10);
+  background-color: rgb(0, 199, 36);
 }
 
 #conversation .fill {
@@ -884,7 +888,7 @@ main.blur {
 }
 
 #chat input::placeholder {
-  color: rgba(255, 255, 255, 0.71);
+  color: rgba(255, 255, 255, 0.851);
 }
 
 #typing {
