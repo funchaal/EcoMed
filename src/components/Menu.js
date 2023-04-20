@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { FaHome, FaPhoneAlt, FaLightbulb, FaMedal, FaLaptopCode } from 'react-icons/fa'
+import { FaPhoneAlt, FaLocationArrow } from 'react-icons/fa'
 import ShortUniqueId from 'short-unique-id'
 
 const unid = new ShortUniqueId({ lenght: 10 })
@@ -8,9 +8,9 @@ const unid = new ShortUniqueId({ lenght: 10 })
 const Item = ({ title, link, Icon, setActive, setHover, setReference, reference, index, cancel, setMenu }) => {
     return(
         <a type="button" href={link} index={index} onClick={() => { setActive(index); setMenu(false) }} onMouseEnter={() => { setReference(unid()); setHover(index) }} onMouseLeave={() => cancel(reference) } className="item">
-            <Icon className="icon" size={20}/>
+            <Icon className="icon" size={25}/>
             <span>{title}</span>
-            <Icon className="icon" size={20}/>
+            <Icon className="icon" size={25}/>
         </a>
     )
 }
@@ -20,7 +20,7 @@ function Menu(props) {
         {
             title: "Local", 
             link: "#local", 
-            Icon: FaHome
+            Icon: FaLocationArrow
         }, 
         {
             title: "Contato", 
@@ -50,14 +50,14 @@ function Menu(props) {
         document.querySelectorAll(".item").forEach((el) => el.setAttribute("isActive", "false"))
         item.setAttribute("isActive", "true")
 
-        setSwitcherFixedTranslation(item.getBoundingClientRect().top)
-        setSwitcherTranslation(item.getBoundingClientRect().top)
+        setSwitcherFixedTranslation(item.getBoundingClientRect().top - 10)
+        setSwitcherTranslation(item.getBoundingClientRect().top - 10)
     }, [active])
 
     useEffect(() => {
         const item = document.querySelector(`.item[index="${hover}"]`)
 
-        setSwitcherTranslation(item.getBoundingClientRect().top)
+        setSwitcherTranslation(item.getBoundingClientRect().top - 10)
     }, [hover])
 
     const [switcherFixedTranslation, setSwitcherFixedTranslation] = useState(0)
@@ -68,8 +68,8 @@ function Menu(props) {
     window.onresize = () => {
         setMenu(false)
         const item = document.querySelector(`.item[index="${active}"]`)
-        setSwitcherFixedTranslation(item.getBoundingClientRect().top)
-        setSwitcherTranslation(item.getBoundingClientRect().top)
+        setSwitcherFixedTranslation(item.getBoundingClientRect().top - 10)
+        setSwitcherTranslation(item.getBoundingClientRect().top - 10)
     }
 
     // document.getElementById("root").onscroll = () => { setMenu(false) }
@@ -77,16 +77,6 @@ function Menu(props) {
     useEffect(() => {
         !menu && setTimeout(() => setX(false), 200)
     })
-
-    useEffect(() => {
-        if (menu) {
-            document.querySelector("main").classList.add("blur")
-            document.querySelector(".logo").classList.add("blur")
-        } else {
-            document.querySelector("main").classList.remove("blur")
-            document.querySelector(".logo").classList.remove("blur")
-        }
-    }, [menu])
 
     return(
         <div id="menu" show={`${menu}`}>
@@ -96,7 +86,6 @@ function Menu(props) {
                 <div></div>
             </button>
             <div id="menu_ctn">
-                <div className="background" onClick={() => setMenu(false)}></div>
                 <div id="switcher" reference={reference} style={{ transform: `translateY(${switcherTranslation}px)` }}></div>
                 <div id="switcher-fixed" style={{ transform: `translateY(${switcherFixedTranslation}px)` }}></div>
                 {DATA.map((item, index) => <Item title={item.title} link={item.link} Icon={item.Icon} index={index} setReference={setReference} reference={reference} setActive={setActive} setHover={setHover} cancel={cancel} setMenu={setMenu}/>)}
