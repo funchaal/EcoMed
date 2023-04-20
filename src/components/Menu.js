@@ -20,7 +20,7 @@ function Menu(props) {
     const DATA = [
         {
             title: "Home", 
-            link: "#local", 
+            link: "#home", 
             Icon: FaHome
         }, 
         {
@@ -92,7 +92,7 @@ function Menu(props) {
                 <div></div>
             </button>
             <div id="menu_ctn">
-            <div className="background" onClick={() => setMenu(false)}></div>
+            <div className="background" onMouseDown={() => setMenu(false)}></div>
             <div className="box">
                 <div id="switcher" reference={reference} style={{ transform: `translateY(${switcherTranslation}px)` }}></div>
                 <div id="switcher-fixed" style={{ transform: `translateY(${switcherFixedTranslation}px)` }}></div>
