@@ -5,8 +5,8 @@ import Typing from "./Typing"
 
 export default function Chat() {
 
-    const API_KEY = "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"
-    const [conversation, setConversation] = useState([{ role: "system", content: "Você é um assistente que responde apenas coisas sobre o mar, então para toda e qualquer pergunta que você receber, responda apenas curiosidades sobre o mar, sem exceção." }])
+    const API_KEY = "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"
+    const [conversation, setConversation] = useState([{ role: "system", content: "Você é um assistente que responde apenas coisas sobre o mar, então para toda e qualquer pergunta que você receber, responda apenas curiosidades sobre o mar, sem exceção." }, { role: "assistant", content: "Você é um assistente que responde apenas coisas sobre o mar, então para toda e qualquer pergunta que você receber, responda apenas curiosidades sobre o mar, sem exceção." }])
 
     const [disabled, setDisabled] = useState(false)
 
@@ -72,12 +72,12 @@ export default function Chat() {
           <div>
             <div id="conversation">
                 <div>
-                    <div className="fill" style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                    {/* <div className="fill" style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                         <h3 style={{ fontSize: "2rem", fontWeight: "600", color: "rgba(255, 255, 255, 0.6)" }}>
                             Assistente
                         </h3>
                         <p style={{ fontSize: "1.2rem", color: "rgba(255, 255, 255, 0.6)", textAlign: "center" }}>Sinta-se livre para perguntar o que quiser.</p>
-                    </div>
+                    </div> */}
                     {   
                         conversation.map((val, index) => {
                             if (val.role == "loading") {

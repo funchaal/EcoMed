@@ -247,7 +247,7 @@ header {
   display: flex;
   position: absolute;
   z-index: 1;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   top: 0;
   left: 0;
@@ -257,24 +257,31 @@ header {
 }
 
 header .logo {
-  height: 50%;
+  height: 40px;
+  margin-top: calc((80px - 40px) / 2);
 }
 
 header .logoicon {
-  height: 50%;
+  height: 40px;
   display: none;
+  margin-top: calc((80px - 40px) / 2);
 }
 
 header .button-box {
   display: flex;
   flex-direction: row;
+  margin-top: calc((80px - 55px) / 2);
 }
 
 header .button-box a {
   text-decoration: none;
   font-size: 1.1rem;
   margin-left: 10px;
-  padding: 13px 60px;
+  display: flex;
+  justify-content: center;
+  height: 55px;
+  align-items: center;
+  padding: 0px 60px;
   border-radius: 10px;
   background-color: transparent;
 }
@@ -303,13 +310,13 @@ header.fixed {
   background-color: transparent;
 }
 
-header.float #menu #x {
+/* header.float #menu #x {
   display: none;
-}
+} */
 
 header.float {
   position: fixed;
-  justify-content: center;
+  /* justify-content: center; */
   top: -90px;
   background-color: rgb(16, 178, 67);
   background-color: rgb(255, 255, 255);
@@ -331,13 +338,13 @@ header.float .button-box a:last-child {
   font-weight: normal;
 }
 
-header.float .logo {
+/* header.float .logo {
   display: none;
 }
 
 header.float .logoicon {
   display: none;
-}
+} */
 
 header.float button {
   color: black;
@@ -646,13 +653,6 @@ main.blur {
 
 
 @media (max-width: 500px) {
-  #conversation {
-    margin-bottom: 20px !important;
-  }
-  #chat input {
-    height: 70px !important;
-    min-height: 70px !important;
-  }
   #home div.left a {
     width: 100%;
     margin-top: 50px;
@@ -661,9 +661,6 @@ main.blur {
     width: 100%;
   }
   header {
-    padding: 0 0 0 15px;
-  }
-  header.float {
     padding: 0;
   }
   header .logo {
@@ -671,15 +668,17 @@ main.blur {
   }
   header .logoicon {
     display: block;
+    margin-left: 15px;
   }
   header .button-box {
-    width: 100%;
-    justify-content: center;
+    border-top: 1px solid rgb(196, 196, 196);
+    padding-top: 10px;
+    margin-top: 0px;
   }
   header .button-box a {
     width: calc(50% - 10px);
     margin: 0;
-    padding: 10px 0px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -740,6 +739,23 @@ main.blur {
 }
 
 @media (max-width: 700px) {
+  header .button-box {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  header.float {
+    top: -150px;
+    height: 140px !important;
+  }
+  header.float[shown="true"] {
+    transform: translateY(149px);
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
   header:not(.float) .button-box {
     display: none;
   }
@@ -862,6 +878,7 @@ main.blur {
 #conversation > div {
   width: 100%;
   max-height: 250px;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }

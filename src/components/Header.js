@@ -20,6 +20,7 @@ export default function Header() {
             setHeader("float")
             if(atual_scroll < scroll) {
                 header_el.setAttribute("shown", true)
+                x.setAttribute("hide", false)
             } else {
                 clearTimeout(time)
                 x.setAttribute("hide", true)
