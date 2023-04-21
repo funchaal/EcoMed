@@ -324,7 +324,7 @@ header.float {
 }
 
 header .button-box a {
-  padding: 13px 70px;
+  padding: 0px 70px;
 }
 
 header.float .button-box a:first-child {
@@ -656,6 +656,7 @@ main.blur {
   #home div.left a {
     width: 100%;
     margin-top: 50px;
+    padding: 0;
   }
   #home div.left button {
     width: 100%;
@@ -670,8 +671,14 @@ main.blur {
     display: block;
     margin-left: 15px;
   }
+  header.float {
+    top: -140px !important;
+    height: 130px !important;
+  }
+  header.float[shown="true"] {
+    transform: translateY(139px) !important;
+  }
   header .button-box {
-    border-top: 1px solid rgb(196, 196, 196);
     padding-top: 10px;
     margin-top: 0px;
   }
@@ -746,7 +753,7 @@ main.blur {
   }
   header.float {
     top: -150px;
-    height: 140px !important;
+    height: 140px;
   }
   header.float[shown="true"] {
     transform: translateY(149px);
@@ -831,7 +838,7 @@ main.blur {
   overflow: hidden;
   height: 350px;
   /* border: 1px solid rgb(41, 41, 59); */
-  background-color: rgb(70, 70, 80);
+  background-color: rgb(60, 60, 70);
   /* box-shadow: 0px 0px 14px 2px rgba(16, 178, 67, 0.5); */
   border-radius: 20px;
 }
@@ -889,6 +896,7 @@ main.blur {
   align-items: center;
   max-width: 70%;
   padding: 12px 16px;
+  min-width: 60px;
   min-height: fit-content;
   margin-bottom: 10px;
   border-radius: 15px;
