@@ -44,7 +44,7 @@ export default function Chat() {
                     model: 'gpt-3.5-turbo', 
                     messages: conversation, 
                     max_tokens: 100, 
-                    temperature: 0.8
+                    temperature: 0.7
                 })
             })
             .then((res) => res.json())

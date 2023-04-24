@@ -46,7 +46,7 @@ export default function Header() {
         <header className={header}>
             <div style={{ display: "flex" }}>
                 <img src={logo} className="logo"></img>
-                <img src={logoicon} className="logoicon"></img>
+                {/* <img src={logoicon} className="logoicon"></img> */}
                 <div className="link-box">
                     <a href="#home">Home</a>
                     <a href="#chating">Assistente</a>
