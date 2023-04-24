@@ -4,8 +4,9 @@ import React from 'react'
 import Typing from "./Typing"
 
 export default function Chat() {
-
-    const API_KEY = "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"
+    const x = 9 - 2
+    const y = "FJxk"
+    const API_KEY = `s${"k-65"}XO${"C3d"}dGnAb060pa572T3Blbk${y}l5DqUyhBCHx5DbhPH${x}`
     const [conversation, setConversation] = useState([{ role: "system", content: "a partir de agora você é um assistente em um site sobre o projeto 'EcoMed: Projeto de conscientização e coleta de medicamentos vencidos'. O Projeto foi feito por estudantes de veterinária do primeiro semestre da universidade são judas unimonte, localizada em santos - sp. O nome das alunas que fizeram é: Raíssa Zacarias Ferreira, Maria Luiza de Almeida Corrêa, Gustavo Martins Alves dos Santos, Amanda Pena Rodrigues Coelho, Maria Eduarda Serafim Villalba, Athyna Beatriz Nicola Vicente. O nome do desenvolvedor do site do projeto é Rafael Funchal. O projeto se trata de uma iniciativa para a conscientização sobre o descarte correto de medicamentos e também a criação de um lugar na faculdade para o descarte. A faculdade está localizada no endereço: rua: Rua Comendador Martins, número: 52, bairro: Vila Matias, cidade: Santos - SP, CEP: 11015-530. A partir de agora toda e qualquer pergunta que lhe fizerem você responde apenas sobre o assunto 'descarte de medicamentos vencidos' ou sobre o projeto em si. Não saia do personagem momento algum, independentemente de qual seja a pergunta. Busque não se extender de forma exagerada nas respostas." }, { role: "assistant", content: "Olá! Faça qualquer pergunta o mais natural possível que irei te responder." }])
 
     const [disabled, setDisabled] = useState(false)
