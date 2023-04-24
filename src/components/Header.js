@@ -44,11 +44,18 @@ export default function Header() {
     }
     return(
         <header className={header}>
-            <img src={logo} className="logo"></img>
-            <img src={logoicon} className="logoicon"></img>
+            <div style={{ display: "flex" }}>
+                <img src={logo} className="logo"></img>
+                <img src={logoicon} className="logoicon"></img>
+                <div className="link-box">
+                    <a href="#home">Home</a>
+                    <a href="#chating">Assistente</a>
+                    <a href="#contact">Contato</a>
+                </div>
+            </div>
             <div className="button-box">
                 <a href="#local">Ver local</a>
-                <a href="#contact">Contato</a>
+                <a href="#info">Informações</a>
             </div>
             <Menu/>
         </header>

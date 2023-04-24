@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { FaPhoneAlt, FaLocationArrow, FaHome } from 'react-icons/fa'
+import { FaPhoneAlt, FaLocationArrow, FaHome, FaAddressBook, FaRobot } from 'react-icons/fa'
 import ShortUniqueId from 'short-unique-id'
 import logo from '../logo.svg'
 
@@ -27,6 +27,16 @@ function Menu(props) {
             title: "Local", 
             link: "#local", 
             Icon: FaLocationArrow
+        }, 
+        {
+            title: "Informações", 
+            link: "#info", 
+            Icon: FaAddressBook
+        }, 
+        {
+            title: "Assistente", 
+            link: "#chating", 
+            Icon: FaRobot
         }, 
         {
             title: "Contato", 
@@ -97,7 +107,7 @@ function Menu(props) {
                 <div id="switcher" reference={reference} style={{ transform: `translateY(${switcherTranslation}px)` }}></div>
                 <div id="switcher-fixed" style={{ transform: `translateY(${switcherFixedTranslation}px)` }}></div>
                 {DATA.map((item, index) => <Item title={item.title} link={item.link} Icon={item.Icon} index={index} setReference={setReference} reference={reference} setActive={setActive} setHover={setHover} cancel={cancel} setMenu={setMenu}/>)}
-                <img src={logo} style={{ position: "absolute", bottom: "20px", height: "40px" }}></img>
+                <img src={logo} style={{ position: "absolute", bottom: "50px", height: "40px" }}></img>
             </div>
             </div>
         </div>

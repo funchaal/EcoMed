@@ -57,10 +57,17 @@
   align-items: flex-start;
 }
 
+#home div.left .home-button-box {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
 #home div.left button {
   /* width: 220px; */
   height: 60px;
   padding: 0 60px;
+  white-space: nowrap;
   border-radius: 10px;
   /* border: 2px solid rgb(23, 23, 23); */
   background-color: transparent;
@@ -70,8 +77,46 @@
   color: rgb(255, 255, 255);
 }
 
+#home div.left .home-button-box a:last-child button {
+  background-color: transparent;
+  /* border: 1px solid rgb(22, 22, 22); */
+  text-decoration: underline;
+  padding: 0 20px;
+  color: rgb(22, 22, 22);
+}
+
 #home div.left a {
-  margin-top: 40px;
+  margin-right: 20px;
+}
+
+h5 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: rgb(41, 41, 41);
+  font-weight: 400;
+  max-width: 600px;
+  text-align: center;
+  /* width: 50%; */
+}
+
+h5 strong {
+  color: rgb(16, 178, 67);
+}
+
+#info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  padding: 50px 8vw 100px 8vw;
+}
+
+#info p.default {
+  /* width: 50%; */
+  width: 80%;
+  margin-bottom: 100px;
 }
 
 #about {
@@ -137,7 +182,7 @@ h1 strong {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: normal;
   margin-bottom: 120px;
   text-align: center;
@@ -262,9 +307,9 @@ header .logo {
 }
 
 header .logoicon {
-  height: 40px;
+  height: 35px;
   display: none;
-  margin-top: calc((80px - 40px) / 2);
+  margin-top: calc((80px - 35px) / 2);
 }
 
 header .button-box {
@@ -282,6 +327,7 @@ header .button-box a {
   height: 55px;
   align-items: center;
   padding: 0px 60px;
+  white-space: nowrap;
   border-radius: 10px;
   background-color: transparent;
 }
@@ -352,13 +398,13 @@ header.float button {
 
 #menu {
   position: fixed;
-  top: 10px;
-  right: calc(-100vw - 20px);
+  top: 0px;
+  right: calc(-100vw - 0px);
   z-index: 2;
 }
 
 #menu[show="true"] #menu_ctn {
-  transform: translateX(calc(-100vw - 30px));
+  transform: translateX(calc(-100vw - 0px));
   transition-delay: 700ms;
 }
 
@@ -367,9 +413,8 @@ header.float button {
 }
 
 #menu_ctn {
-  width: calc(100vw - 20px);
-  height: 60vh;
-  padding: 5px;
+  width: calc(100vw);
+  height: 100vh;
   background-color: rgb(255, 255, 255);
   /* backdrop-filter: blur(4px); */
   /* transition-duration: 200ms; */
@@ -511,19 +556,18 @@ main.blur {
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.91);
-  border-radius: 15px;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.91);  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
   padding: 60px 5px 0px 5px;
 }
 
 #menu #menu_ctn .background {
   width: 100vw;
   height: 100vh;
+  display: none;
   position: absolute;
-  right: -10px;
+  right: -5px;
   background-color: rgba(221, 221, 221, 0.4);
-  top: -10px;
+  top: -5px;
   display: none;
 }
 
@@ -562,24 +606,44 @@ main.blur {
   background-color: rgb(16, 178, 67);
 }
 
+header .link-box {
+  display: flex;
+  height: 80px;
+  margin-left: 15px;
+  align-items: center;
+}
+
+header .link-box a {
+  display: flex;
+  padding: 2px;
+  height: 80px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  margin-left: 25px;
+  align-items: center;
+}
+
 @media (max-width: 1200px) {
-  header:not(.float) .button-box {
-    margin-left: 30px;
+  #info {
+    align-items: flex-start;
   }
-  header:not(.float) {
+  h5 {
+    text-align: left;
+  }
+  #info p.default {
+    /* width: 50%; */
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  /* header:not(.float) {
     justify-content: flex-start;
-  }
+  } */
   header:not(.float) .button-box a:first-child {
-    background-color: rgba(255, 255, 255, 0);
-    padding: 5px 15px;
-    color: rgb(0, 0, 0);
-    box-shadow: 0px 0px 5px 0px rgba(16, 178, 67, 0);
+    padding: 5px 25px;
   }
   header:not(.float) .button-box a:last-child {
-    border: 1px solid rgba(255, 255, 255, 0);
-    padding: 5px 15px;
-    font-weight: normal;
-    color: rgb(0, 0, 0);
+    padding: 5px 25px;
   }
   #home div.left {
     width: 100%;
@@ -653,13 +717,13 @@ main.blur {
 
 
 @media (max-width: 500px) {
-  #home div.left a {
+  /* #home div.left a {
     width: 100%;
     margin-top: 50px;
     padding: 0;
-  }
-  #home div.left button {
-    width: 100%;
+  } */
+  #home div.left .home-button-box {
+    margin-top: 50px;
   }
   header {
     padding: 0;
@@ -679,13 +743,15 @@ main.blur {
     transform: translateY(139px) !important;
   }
   header .button-box {
-    padding-top: 10px;
+    padding-top: 7.5px;
     margin-top: 0px;
+    margin-bottom: 7.5px !important;
+    border-top: 1px solid rgb(201, 201, 201);
   }
   header .button-box a {
     width: calc(50% - 10px);
     margin: 0;
-    height: 45px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -699,6 +765,14 @@ main.blur {
   #root::-webkit-scrollbar {
     width: 0px;
   }
+  .map {
+    box-shadow: 0px 0px 5px 1px rgb(16, 178, 67, 0.4);
+  }
+  #about {
+    margin-top: -2rem;
+  }
+}
+@media (max-width: 900px) {
   h1 {
     font-size: 2.5rem;
   }
@@ -712,21 +786,17 @@ main.blur {
   h4 {
     font-size: 2.6rem;
   }
-  .map {
-    box-shadow: 0px 0px 5px 1px rgb(16, 178, 67, 0.4);
-  }
-  #about {
-    margin-top: -2rem;
-  }
-}
-
-
-@media (max-width: 900px) {
   #local > h4 {
     width: 90%;
   }
   #about {
     padding: 0px 20px 50px 20px;
+  }
+  #info {
+    padding: 80px 20px 50px 20px;
+  }
+  #info p.default {
+    margin-bottom: 80px;
   }
   #local {
     padding: 100px 20px 30px 20px;
@@ -735,7 +805,7 @@ main.blur {
     flex-direction: column;
   }
   #chating {
-    padding: 50px 20px;
+    padding: 50px 20px 0px 20px;
   }
   #local .box .location .box {
     flex-direction: column;
@@ -745,7 +815,25 @@ main.blur {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+  #home div.left .home-button-box {
+    flex-direction: column;
+  }
+  #home div.left .home-button-box button {
+    height: 55px
+  }
+  #home div.left .home-button-box a:last-child button {
+    background-color: transparent;
+    /* border: 1px solid rgb(22, 22, 22); */
+    text-decoration: none;
+    padding: 0 60px;
+    margin-top: 10px;
+    color: white;
+    background-color: gray;
+  }
+  header .link-box {
+    display: none;
+  }
   header .button-box {
     width: 100%;
     justify-content: center;
@@ -800,7 +888,7 @@ main.blur {
     padding: 0 20px;
   }
   #about .box .left {
-    width: 600px;
+    /* width: 600px; */
     min-width: unset;
     max-width: 100%;
   }

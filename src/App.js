@@ -5,6 +5,7 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Local from './components/pages/Local';
 import Chating from './components/pages/Chating';
+import Info from './components/pages/Info';
 
 function App() {
   document.title = "EcoMed"
@@ -16,6 +17,7 @@ function App() {
         <About/>
         <Local/>
         <Chating/>
+        <Info/>
       </main>
     </div>
   );
