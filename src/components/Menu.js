@@ -107,7 +107,7 @@ function Menu(props) {
                 <div id="switcher" reference={reference} style={{ transform: `translateY(${switcherTranslation}px)` }}></div>
                 <div id="switcher-fixed" style={{ transform: `translateY(${switcherFixedTranslation}px)` }}></div>
                 {DATA.map((item, index) => <Item title={item.title} link={item.link} Icon={item.Icon} index={index} setReference={setReference} reference={reference} setActive={setActive} setHover={setHover} cancel={cancel} setMenu={setMenu}/>)}
-                <img src={logo} style={{ position: "absolute", bottom: "50px", height: "40px" }}></img>
+                {/* <img src={logo} style={{ position: "absolute", bottom: "50px", height: "40px" }}></img> */}
             </div>
             </div>
         </div>
